@@ -27,7 +27,6 @@ GLOBAL_MSO_SERVER = "http://10.0.5.1:8080"
 GLOBAL_MSO_USERNAME = "InfraPortalClient"
 GLOBAL_MSO_PASSWORD = "password1$"
 # openstack info - info to select right info in environment
-GLOBAL_OPENSTACK_SERVICE_REGION = "DFW"
 GLOBAL_OPENSTACK_KEYSTONE_SERVER = "https://identity.api.rackspacecloud.com"
 # packet generate vnf info - everything is from the private oam network (also called ecomp private network)
 GLOBAL_PACKET_GENERATOR_PORT = "8183"

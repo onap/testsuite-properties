@@ -15,3 +15,8 @@ do
 done
 GLOBAL_VM_PROPERTIES=${GLOBAL_VM_PROPERTIES/%,\\n/\}}
 echo -e $GLOBAL_VM_PROPERTIES > $PROPERTIES
+
+#
+# 
+REGION=`cat $CONFIG/region.txt`
+echo -e "\nGLOBAL_OPENSTACK_SERVICE_REGION = \"$REGION\"" >> integration_robot_properties.py
