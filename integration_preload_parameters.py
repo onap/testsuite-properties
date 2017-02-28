@@ -3,8 +3,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
      "defaults" : {
         'key_name' : 'vfw_key${uuid}',
         "pub_key" : "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAqqnA9BAiMLtjOPSYBfhzLu4CiBolWoskDg4KVwhTJVTTeB6CqrQNcadlGXxOHhCYuNCKkUmIVF4WTOisVOJ75Z1c4OMoZLL85xVPKSIeH63kgVugwgPYQu55NbbWX+rsbUha3LnElDhNviMM3iTPbD5nnhKixNERAJMTLKXvZZZGqxW94bREknYPQTT2qrk3YRqwldncopp6Nkgv3AnSJz2gc9tjxnWF0poTQnQm/3D6hiJICrzKfAV0EaPN0KdtYjPhKrYoy6Qb/tKOVaaqsvwfKBJGrT9LfcA7D7M/yj292RT1XN63hI84WC383LsaPJ6eWdDTE6zUP1eGTWCoOw== rsa-key-20161026",
-        "repo_user" : "${nexus_username}",
-        "repo_passwd" : "${nexus_password}",
+        "repo_url_blob" : "https://nexus.openecomp.org/content/repositories/raw",
+        "repo_url_artifacts" : "https://nexus.openecomp.org/content/repositories/snapshots",
+        "demo_artifacts_version" : "${artifacts_version}",
         "ecomp_private_net_id" : "${network}",
         "ecomp_private_subnet_id" : "${network}",
         "ecomp_private_net_cidr" : "10.0.0.0/8",
@@ -15,7 +16,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
 # heat template parameter values for heat template instances created during Vnf-Orchestration test cases
     "Vnf-Orchestration" : {
         "vfw_preload.template": {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vfw/${artifacts_version}",
             "unprotected_private_net_id" : "vofwl01_unprotected",
             "unprotected_private_net_cidr" : "192.168.10.0/24",
             "protected_private_net_id" : "vofwl01_protected",
@@ -32,7 +32,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vsn_name_0':'vofwl01snk${hostid}',
         },
         "vlb_preload.template" : {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vlb/${artifacts_version}",
             "vlb_private_net_id" : "volb01_private",
             "vlb_private_net_cidr" : "192.168.30.0/24",
             "vlb_private_ip_0" : "192.168.30.100",
@@ -43,7 +42,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vdns_name_0':'vovlbdns${hostid}',
         },
         "dnsscaling_preload.template" : {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vlb/${artifacts_version}",
             "vlb_private_net_id" : "volb01_private",
             "vlb_private_ip_0" : "192.168.30.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.4",
@@ -57,7 +55,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
 # heat template parameter values for heat template instances created during Closed-Loop test cases
     "Closed-Loop" : {
 		"vfw_preload.template": {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vfw/${artifacts_version}",
             "unprotected_private_net_id" : "clfwl01_unprotected",
             "unprotected_private_net_cidr" : "192.168.110.0/24",
             "protected_private_net_id" : "clfwl01_protected",
@@ -74,7 +71,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vsn_name_0':'clfwl01snk${hostid}',
         },
         "vlb_preload.template" : {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vlb/${artifacts_version}",
             "vlb_private_net_id" : "cllb01_private",
             "vlb_private_net_cidr" : "192.168.130.0/24",
             "vlb_private_ip_0" : "192.168.130.100",
@@ -85,7 +81,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vdns_name_0':'clvlbdns${hostid}',
         },
         "dnsscaling_preload.template" : {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vlb/${artifacts_version}",
             "vlb_private_net_id" : "cllb01_private",
             "vlb_private_ip_0" : "192.168.130.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.14",
@@ -99,7 +94,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
  # heat template parameter values for heat template instances created for hands on demo test case
    "Demo" : {
         "vfw_preload.template": {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vfw/${artifacts_version}",
             "unprotected_private_net_id" : "demofwl_unprotected",
             "unprotected_private_net_cidr" : "192.168.110.0/24",
             "protected_private_net_id" : "demofwl_protected",
@@ -116,7 +110,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vsn_name_0':'demofwl01snk',
         },
         "vlb_preload.template" : {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vlb/${artifacts_version}",
             "vlb_private_net_id" : "demolb_private",
             "vlb_private_net_cidr" : "192.168.130.0/24",
             "vlb_private_ip_0" : "192.168.130.100",
@@ -127,7 +120,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vdns_name_0':'demovlbdns',
         },
         "dnsscaling_preload.template" : {
-            "repo_url" : "${nexus_repo}/org.openecomp.demo/vnfs/vlb/${artifacts_version}",
             "vlb_private_net_id" : "demolb_private",
             "vlb_private_ip_0" : "192.168.130.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.14",
