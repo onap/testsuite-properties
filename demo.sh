@@ -59,5 +59,5 @@ do
 done
 
 ETEHOME=/var/opt/OpenECOMP_ETE
-VARIABLEFILES="-V /share/config/vm_properties.py -V /share/config/robot_properties_ete.py -V /share/config/robot_preload_parameters.py"
+VARIABLEFILES="-V /share/config/vm_properties.py -V /share/config/integration_robot_properties.py -V /share/config/integration_preload_parameters.py"
 docker exec openecompete_container ${ETEHOME}/runTags.sh ${VARIABLEFILES} ${VARIABLES} -d /share/logs/demo/${TAG} -i ${TAG} --display 89 2> ${TAG}.out
