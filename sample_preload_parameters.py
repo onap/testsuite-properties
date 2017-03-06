@@ -3,8 +3,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
      "defaults" : {
         'key_name' : 'vfw_key${uuid}',
         "pub_key" : "public_ssh_key",
-        "repo_user" : "nexus_repo_username",
-        "repo_passwd" : "nexus_repo_password",
+        "repo_url_blob" : "raw_repository",
+        "repo_url_artifacts" : "artifacts_repository",
+        "demo_artifacts_version" : "artifacts_version",
         "ecomp_private_net_id" : "name_or_id_of_private_oam_network",
         "ecomp_private_subnet_id" : "name_or_id_of_private_oam_subnetwork",
         "ecomp_private_net_cidr" : "10.0.0.0/8",
@@ -15,10 +16,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
 # heat template parameter values for heat template instances created during Vnf-Orchestration test cases
     "Vnf-Orchestration" : {
         "vfw_preload.template": {
-            "repo_url" : "nexus_repo_url_vfw_artifacts",
-            "unprotected_private_net_id" : "vofwl01_unprotected",
+            "unprotected_private_net_id" : "vofwl01_unprotected${hostid}",
             "unprotected_private_net_cidr" : "192.168.10.0/24",
-            "protected_private_net_id" : "vofwl01_protected",
+            "protected_private_net_id" : "vofwl01_protected${hostid}",
             "protected_private_net_cidr" : "192.168.20.0/24",
             "vfw_private_ip_0" : "192.168.10.100",
             "vfw_private_ip_1" : "192.168.20.100",
@@ -32,8 +32,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vsn_name_0':'vofwl01snk${hostid}',
         },
         "vlb_preload.template" : {
-            "repo_url" : "nexus_repo_url_vlb_artifacts",
-            "vlb_private_net_id" : "volb01_private",
+            "vlb_private_net_id" : "volb01_private${hostid}",
             "vlb_private_net_cidr" : "192.168.30.0/24",
             "vlb_private_ip_0" : "192.168.30.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.4",
@@ -43,8 +42,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vdns_name_0':'vovlbdns${hostid}',
         },
         "dnsscaling_preload.template" : {
-            "repo_url" : "nexus_repo_url_vlb_artifacts",
-            "vlb_private_net_id" : "volb01_private",
+            "vlb_private_net_id" : "volb01_private${hostid}",
             "vlb_private_ip_0" : "192.168.30.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.4",
             "vdns_private_ip_0" : "192.168.30.222",
@@ -57,10 +55,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
 # heat template parameter values for heat template instances created during Closed-Loop test cases
     "Closed-Loop" : {
 		"vfw_preload.template": {
-            "repo_url" : "nexus_repo_url_vfw_artifacts",
-            "unprotected_private_net_id" : "clfwl01_unprotected",
+            "unprotected_private_net_id" : "clfwl01_unprotected${hostid}",
             "unprotected_private_net_cidr" : "192.168.110.0/24",
-            "protected_private_net_id" : "clfwl01_protected",
+            "protected_private_net_id" : "clfwl01_protected${hostid}",
             "protected_private_net_cidr" : "192.168.120.0/24",
             "vfw_private_ip_0" : "192.168.110.100",
             "vfw_private_ip_1" : "192.168.120.100",
@@ -74,8 +71,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vsn_name_0':'clfwl01snk${hostid}',
         },
         "vlb_preload.template" : {
-            "repo_url" : "nexus_repo_url_vlb_artifacts",
-            "vlb_private_net_id" : "cllb01_private",
+            "vlb_private_net_id" : "cllb01_private${hostid}",
             "vlb_private_net_cidr" : "192.168.130.0/24",
             "vlb_private_ip_0" : "192.168.130.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.14",
@@ -85,8 +81,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vdns_name_0':'clvlbdns${hostid}',
         },
         "dnsscaling_preload.template" : {
-            "repo_url" : "nexus_repo_url_vlb_artifacts",
-            "vlb_private_net_id" : "cllb01_private",
+            "vlb_private_net_id" : "cllb01_private${hostid}",
             "vlb_private_ip_0" : "192.168.130.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.14",
             "vdns_private_ip_0" : "192.168.130.222",
@@ -99,7 +94,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
  # heat template parameter values for heat template instances created for hands on demo test case
    "Demo" : {
         "vfw_preload.template": {
-            "repo_url" : "nexus_repo_url_vfw_artifacts",
             "unprotected_private_net_id" : "demofwl_unprotected",
             "unprotected_private_net_cidr" : "192.168.110.0/24",
             "protected_private_net_id" : "demofwl_protected",
@@ -116,7 +110,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vsn_name_0':'demofwl01snk',
         },
         "vlb_preload.template" : {
-            "repo_url" : "nexus_repo_url_vlb_artifacts",
             "vlb_private_net_id" : "demolb_private",
             "vlb_private_net_cidr" : "192.168.130.0/24",
             "vlb_private_ip_0" : "192.168.130.100",
@@ -127,7 +120,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vdns_name_0':'demovlbdns',
         },
         "dnsscaling_preload.template" : {
-            "repo_url" : "nexus_repo_url_vlb_artifacts",
             "vlb_private_net_id" : "demolb_private",
             "vlb_private_ip_0" : "192.168.130.100",
             "vlb_private_ip_1" : "10.1.${ecompnet}.14",
