@@ -1,10 +1,13 @@
 #this is normall genrated by the build and install so should not be checked in for nonlocal envs
-GLOBAL_ROBOT_VM_PROPERTIES = {
- "gitlab_ip" : "0.0.0.0",
- "gitlab_password" : "password",
- "gitlab_username" : "username",
- "network" : "oam_network",
- "nexus_docker_repo" : "dockerrepo.com",
- "nexus_password" : "password",
- "nexus_repo" : "https://dockerrepo.com:8443/repository/delivery2raw",
- "nexus_username" : "username"}
+GLOBAL_INJECTED_ARTIFACTS_VERSION = "1.0.0"
+GLOBAL_INJECTED_GITLAB_PASSWORD = "password"
+GLOBAL_INJECTED_GITLAB_USERNAME = "username"
+GLOBAL_INJECTED_NETWORK = "oam_network"
+GLOBAL_INJECTED_NEXUS_DOCKER_REPO = "dockerrepo.com"
+GLOBAL_INJECTED_NEXUS_PASSWORD = "password"
+GLOBAL_INJECTED_NEXUS_REPO = "https://dockerrepo.com/content/sites/raw"
+GLOBAL_INJECTED_NEXUS_USERNAME = "username"
+GLOBAL_INJECTED_OPENSTACK_API_KEY = "api_key"
+GLOBAL_INJECTED_OPENSTACK_PASSWORD = "password"
+GLOBAL_INJECTED_OPENSTACK_USERNAME = "username"
+GLOBAL_INJECTED_REGION = "DFW"
