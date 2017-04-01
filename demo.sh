@@ -14,6 +14,7 @@ if [ $# -eq 0 ];then
 	echo "Usage: demo.sh init"
 	echo "       demo.sh preload <vnf_name> <module_name>"
 	echo "       demo.sh appc <module_name>"
+	echo "       demo.sh init_robot"
 	exit
 fi
 ##
@@ -24,6 +25,17 @@ do
 	key="$1"
 
 	case $key in
+    	init_robot)
+    	TAG="UpdateWebPage"
+	    read -s -p "WEB Site Password for user 'test': " WEB_PASSWORD
+		if [ "$WEB_PASSWORD" = "" ]; then
+		    echo ""
+		    echo "WEB Password is required for user 'test'"
+			exit
+		fi
+		VARIABLES="$VARIABLES -v WEB_PASSWORD:$WEB_PASSWORD"
+    	shift
+    	;;
     	init)
     	TAG="InitDemo"
     	shift
