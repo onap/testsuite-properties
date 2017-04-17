@@ -15,6 +15,8 @@ if [ $# -eq 0 ];then
 	echo "       demo.sh preload <vnf_name> <module_name>"
 	echo "       demo.sh appc <module_name>"
 	echo "       demo.sh init_robot"
+	echo "       demo.sh instantiateVFW"
+	echo "       demo.sh deleteVNF <module_name from instantiateVFW>"
 	exit
 fi
 ##
@@ -62,10 +64,34 @@ do
     	VARIABLES="$VARIABLES -v MODULE_NAME:$1"
     	shift
     	;;
+    	instantiateVFW)
+    	TAG="instantiateVFW"
+    	VARIABLES="$VARIABLES -v GLOBAL_BUILD_NUMBER:$$"
+    	shift
+    	;;
+    	deleteVNF)
+    	TAG="deleteVNF"
+		shift
+    	if [ $# -ne 1 ];then
+			echo "Usage: demo.sh deleteVNF <module_name from instantiateVFW>"
+			exit
+		fi
+		VARFILE=$1.py
+		if [ -e /opt/eteshare/${VARFILE} ]; then
+			VARIABLES="$VARIABLES -V /share/${VARFILE}"
+		else
+			echo "Cache file ${VARFILE} is not found"
+			exit
+		fi
+    	shift
+    	;;
     	*)
     	echo "Usage: demo.sh init"
     	echo "       demo.sh preload <vnf_name> <module_name>"
    	    echo "       demo.sh appc <module_name>"
+   	    echo "       demo.sh init_robot"
+   	    echo "       demo.sh instantiateVFW"
+   	    echo "       demo.sh deleteVNF <module_name from instantiateVFW>"
     	exit
 	esac
 done
