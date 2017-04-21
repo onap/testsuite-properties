@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #
-# Run the testsuite for the passed tag. Valid tags are ete, health, closedloop, orchestration
+# Run the testsuite for the passed tag. Valid tags are ete, health, closedloop, instantiate
 # Please clean up logs when you are done...
 # Note: Do not run multiple concurrent ete.sh as the --display is not parameterized and tests will collide
 #
 if [ "$1" == "" ];then
-   echo "Usage: ete.sh [ health | ete | closedloop | orchestration ]"
+   echo "Usage: ete.sh [ health | ete | closedloop | instantiate ]"
    exit
 fi
 
