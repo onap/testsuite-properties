@@ -34,7 +34,7 @@ GLOBAL_PACKET_GENERATOR_USERNAME = "admin"
 GLOBAL_PACKET_GENERATOR_PASSWORD = "admin"
 GLOBAL_PGN_PORT = "2831"
 # policy info - everything is from the private oam network (also called ecomp private network)
-GLOBAL_POLICY_SERVER_URL = "http://10.0.6.1:8480"
+GLOBAL_POLICY_SERVER_URL = "http://10.0.6.1:8081"
 GLOBAL_POLICY_AUTH = "dGVzdHJlc3Q6M2MwbXBVI2gwMUBOMWMz"
 GLOBAL_POLICY_CLIENTAUTH = "cHl0aG9uOnRlc3Q="
 GLOBAL_POLICY_HEALTHCHECK_URL = "http://10.0.6.1:6969"
