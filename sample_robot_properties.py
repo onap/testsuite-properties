@@ -32,7 +32,6 @@ GLOBAL_MSO_SERVER_PORT = "8080"
 GLOBAL_MSO_USERNAME = "username"
 GLOBAL_MSO_PASSWORD = "password"
 # openstack info - info to select right info in environment
-GLOBAL_OPENSTACK_TENANT_NAME = ""
 # packet generate vnf info - everything is from the private oam network (also called ecomp private network)
 GLOBAL_PACKET_GENERATOR_PORT = "8183"
 GLOBAL_PACKET_GENERATOR_USERNAME = "username"
