@@ -6,12 +6,14 @@ GLOBAL_PRELOAD_PARAMETERS = {
         "repo_url_blob" : "https://nexus.onap.org/content/repositories/raw",
         "repo_url_artifacts" : "https://nexus.onap.org/content/groups/staging",
         "demo_artifacts_version" : "${artifacts_version}",
-        "ecomp_private_net_id" : "${network}",
-        "ecomp_private_subnet_id" : "${network}",
-        "ecomp_private_net_cidr" : "10.0.0.0/8",
+        "onap_private_net_id" : "${network}",
+        "onap_private_subnet_id" : "${network}",
+        "onap_private_net_cidr" : "10.0.0.0/8",
         "dcae_collector_ip" : "10.0.4.102",
         "dcae_collector_port" : "8080",
-
+        "public_net_id" : "${public_net_id}",
+        "cloud_env" : "${cloud_env}",
+   	    "install_script_version" : "${install_script_version}"
     },
 # heat template parameter values for heat template instances created during Vnf-Orchestration test cases
     "Vnf-Orchestration" : {
@@ -30,6 +32,8 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vfw_name_0':'vofwl01fwl${hostid}',
             'vpg_name_0':'vofwl01pgn${hostid}',
             'vsn_name_0':'vofwl01snk${hostid}',
+	        "vfw_image_name" : "${vm_image_name}",
+    	    "vfw_flavor_name" : "${vm_flavor_name}"
         },
         "vlb_preload.template" : {
             "vlb_private_net_id" : "volb01_private${hostid}",
@@ -40,6 +44,11 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_1" : "10.1.${ecompnet}.5",
             'vlb_name_0':'vovlblb${hostid}',
             'vdns_name_0':'vovlbdns${hostid}',
+	        "vlb_image_name" : "${vm_image_name}",
+    	    "vlb_flavor_name" : "${vm_flavor_name}",
+    	    "vlb_private_net_cidr" : "192.168.10.0/24",
+  			"pktgen_private_net_cidr" : "192.168.9.0/24"
+
         },
         "dnsscaling_preload.template" : {
             "vlb_private_net_id" : "volb01_private${hostid}",
@@ -48,6 +57,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_0" : "192.168.30.222",
             "vdns_private_ip_1" : "10.1.${ecompnet}.6",
             'scaling_vdns_name_0':'vovlbscaling${hostid}',
+	        "vlb_image_name" : "${vm_image_name}",
+    	    "vlb_flavor_name" : "${vm_flavor_name}",
+    	    "vlb_private_net_cidr" : "192.168.10.0/24"
         },
         "vvg_preload.template" : {
         }
@@ -69,6 +81,8 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vfw_name_0':'clfwl01fwl${hostid}',
             'vpg_name_0':'clfwl01pgn${hostid}',
             'vsn_name_0':'clfwl01snk${hostid}',
+	        "vfw_image_name" : "${vm_image_name}",
+    	    "vfw_flavor_name" : "${vm_flavor_name}"
         },
         "vlb_preload.template" : {
             "vlb_private_net_id" : "cllb01_private${hostid}",
@@ -79,6 +93,10 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_1" : "10.1.${ecompnet}.15",
             'vlb_name_0':'clvlblb${hostid}',
             'vdns_name_0':'clvlbdns${hostid}',
+	        "vlb_image_name" : "${vm_image_name}",
+    	    "vlb_flavor_name" : "${vm_flavor_name}",
+    	    "vlb_private_net_cidr" : "192.168.10.0/24",
+  			"pktgen_private_net_cidr" : "192.168.9.0/24"
         },
         "dnsscaling_preload.template" : {
             "vlb_private_net_id" : "cllb01_private${hostid}",
@@ -87,6 +105,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_0" : "192.168.130.222",
             "vdns_private_ip_1" : "10.1.${ecompnet}.16",
             'scaling_vdns_name_0':'clvlbscaling${hostid}',
+	        "vlb_image_name" : "${vm_image_name}",
+    	    "vlb_flavor_name" : "${vm_flavor_name}",
+    	    "vlb_private_net_cidr" : "192.168.10.0/24"
         },
         "vvg_preload.template" : {
         }
@@ -108,6 +129,8 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'vfw_name_0':'demofwl01fwl',
             'vpg_name_0':'demofwl01pgn',
             'vsn_name_0':'demofwl01snk',
+	        "vfw_image_name" : "${vm_image_name}",
+    	    "vfw_flavor_name" : "${vm_flavor_name}",
         },
         "vlb_preload.template" : {
             "vlb_private_net_id" : "demolb_private",
@@ -118,6 +141,10 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_1" : "10.1.${ecompnet}.15",
             'vlb_name_0':'demovlblb',
             'vdns_name_0':'demovlbdns',
+	        "vlb_image_name" : "${vm_image_name}",
+    	    "vlb_flavor_name" : "${vm_flavor_name}",
+    	    "vlb_private_net_cidr" : "192.168.10.0/24",
+  			"pktgen_private_net_cidr" : "192.168.9.0/24"
         },
         "dnsscaling_preload.template" : {
             "vlb_private_net_id" : "demolb_private",
@@ -126,6 +153,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_0" : "192.168.130.222",
             "vdns_private_ip_1" : "10.1.${ecompnet}.16",
             'scaling_vdns_name_0':'demovlbscaling',
+	        "vlb_image_name" : "${vm_image_name}",
+    	    "vlb_flavor_name" : "${vm_flavor_name}",
+    	    "vlb_private_net_cidr" : "192.168.10.0/24"
         },
         "vvg_preload.template" : {
         }
