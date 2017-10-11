@@ -13,9 +13,45 @@ GLOBAL_PRELOAD_PARAMETERS = {
         "dcae_collector_port" : "8080",
         "public_net_id" : "${public_net_id}",
         "cloud_env" : "${cloud_env}",
-   	    "install_script_version" : "${install_script_version}"
+   	    "install_script_version" : "${install_script_version}",
+###
+# vims_preload  same for every instantiation
+###
+        "bono_image_name" : "${vm_image_name}",
+        "sprout_image_name" : "${vm_image_name}",
+        "homer_image_name" : "${vm_image_name}",
+        "homestead_image_name" : "${vm_image_name}",
+        "ralf_image_name" : "${vm_image_name}",
+        "ellis_image_name" : "${vm_image_name}",
+        "dns_image_name" : "${vm_image_name}",
+	    "bono_flavor_name" : "${vm_flavor_name}",
+	    "sprout_flavor_name" : "${vm_flavor_name}",
+	    "homer_flavor_name" : "${vm_flavor_name}",
+	    "homestead_flavor_name" : "${vm_flavor_name}",
+	    "ralf_flavor_name" : "${vm_flavor_name}",
+	    "ellis_flavor_name" : "${vm_flavor_name}",
+	    "dns_flavor_name" : "${vm_flavor_name}",
+	    "repo_url" : "http://repo.cw-ngv.com/stable",
+	    "zone" : "me.cw-ngv.com",
+	    "dn_range_start" : "2425550000",
+	    "dn_range_length" : "10000",
+	    "dnssec_key" : "9FPdYTWhk5+LbhrqtTPQKw==",
+###
+# vlb_preload same for every instantiation
+###
+		"vlb_image_name" : "${vm_image_name}",
+		"vlb_flavor_name" : "${vm_flavor_name}",
+###
+# vlb_preload same for every instantiation
+###
+		"vfw_image_name" : "${vm_image_name}",
+		"vfw_flavor_name" : "${vm_flavor_name}",
+###
     },
+
+###
 # heat template parameter values for heat template instances created during Vnf-Orchestration test cases
+###
     "Vnf-Orchestration" : {
         "vfw_preload.template": {
             "unprotected_private_net_id" : "vofwl01_unprotected${hostid}",
@@ -31,9 +67,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vsn_private_ip_1" : "10.1.${ecompnet}.3",
             'vfw_name_0':'vofwl01fwl${hostid}',
             'vpg_name_0':'vofwl01pgn${hostid}',
-            'vsn_name_0':'vofwl01snk${hostid}',
-	        "vfw_image_name" : "${vm_image_name}",
-    	    "vfw_flavor_name" : "${vm_flavor_name}"
+            'vsn_name_0':'vofwl01snk${hostid}'
         },
         "vlb_preload.template" : {
             "vlb_private_net_id" : "volb01_private${hostid}",
@@ -44,11 +78,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_1" : "10.1.${ecompnet}.5",
             'vlb_name_0':'vovlblb${hostid}',
             'vdns_name_0':'vovlbdns${hostid}',
-	        "vlb_image_name" : "${vm_image_name}",
-    	    "vlb_flavor_name" : "${vm_flavor_name}",
     	    "vlb_private_net_cidr" : "192.168.10.0/24",
   			"pktgen_private_net_cidr" : "192.168.9.0/24"
-
+    	    
         },
         "dnsscaling_preload.template" : {
             "vlb_private_net_id" : "volb01_private${hostid}",
@@ -57,9 +89,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_0" : "192.168.30.222",
             "vdns_private_ip_1" : "10.1.${ecompnet}.6",
             'scaling_vdns_name_0':'vovlbscaling${hostid}',
-	        "vlb_image_name" : "${vm_image_name}",
-    	    "vlb_flavor_name" : "${vm_flavor_name}",
     	    "vlb_private_net_cidr" : "192.168.10.0/24"
+        },
+        "vims_preload.template" : {
         },
         "vvg_preload.template" : {
         }
@@ -80,9 +112,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vsn_private_ip_1" : "10.1.${ecompnet}.13",
             'vfw_name_0':'clfwl01fwl${hostid}',
             'vpg_name_0':'clfwl01pgn${hostid}',
-            'vsn_name_0':'clfwl01snk${hostid}',
-	        "vfw_image_name" : "${vm_image_name}",
-    	    "vfw_flavor_name" : "${vm_flavor_name}"
+            'vsn_name_0':'clfwl01snk${hostid}'
         },
         "vlb_preload.template" : {
             "vlb_private_net_id" : "cllb01_private${hostid}",
@@ -93,8 +123,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_1" : "10.1.${ecompnet}.15",
             'vlb_name_0':'clvlblb${hostid}',
             'vdns_name_0':'clvlbdns${hostid}',
-	        "vlb_image_name" : "${vm_image_name}",
-    	    "vlb_flavor_name" : "${vm_flavor_name}",
     	    "vlb_private_net_cidr" : "192.168.10.0/24",
   			"pktgen_private_net_cidr" : "192.168.9.0/24"
         },
@@ -105,9 +133,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_0" : "192.168.130.222",
             "vdns_private_ip_1" : "10.1.${ecompnet}.16",
             'scaling_vdns_name_0':'clvlbscaling${hostid}',
-	        "vlb_image_name" : "${vm_image_name}",
-    	    "vlb_flavor_name" : "${vm_flavor_name}",
     	    "vlb_private_net_cidr" : "192.168.10.0/24"
+        },
+        "vims_preload.template" : {
         },
         "vvg_preload.template" : {
         }
@@ -128,9 +156,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vsn_private_ip_1" : "10.1.${ecompnet}.13",
             'vfw_name_0':'demofwl01fwl',
             'vpg_name_0':'demofwl01pgn',
-            'vsn_name_0':'demofwl01snk',
-	        "vfw_image_name" : "${vm_image_name}",
-    	    "vfw_flavor_name" : "${vm_flavor_name}",
+            'vsn_name_0':'demofwl01snk'
         },
         "vlb_preload.template" : {
             "vlb_private_net_id" : "demolb_private",
@@ -141,8 +167,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_1" : "10.1.${ecompnet}.15",
             'vlb_name_0':'demovlblb',
             'vdns_name_0':'demovlbdns',
-	        "vlb_image_name" : "${vm_image_name}",
-    	    "vlb_flavor_name" : "${vm_flavor_name}",
     	    "vlb_private_net_cidr" : "192.168.10.0/24",
   			"pktgen_private_net_cidr" : "192.168.9.0/24"
         },
@@ -153,9 +177,9 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_0" : "192.168.130.222",
             "vdns_private_ip_1" : "10.1.${ecompnet}.16",
             'scaling_vdns_name_0':'demovlbscaling',
-	        "vlb_image_name" : "${vm_image_name}",
-    	    "vlb_flavor_name" : "${vm_flavor_name}",
     	    "vlb_private_net_cidr" : "192.168.10.0/24"
+        },
+        "vims_preload.template" : {
         },
         "vvg_preload.template" : {
         }
