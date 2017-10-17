@@ -24,6 +24,9 @@ GLOBAL_DCAE_SERVER_PROTOCOL = "http"
 GLOBAL_DCAE_SERVER_PORT = "9998"
 GLOBAL_DCAE_USERNAME = "console"
 GLOBAL_DCAE_PASSWORD = "ZjJkYjllMjljMTI2M2Iz"
+# microservice bus info - everything is from the private oam network (also called ecomp private network)
+GLOBAL_MSB_SERVER_PROTOCOL = "http"
+GLOBAL_MSB_SERVER_PORT = "80"
 # message router info - everything is from the private oam network (also called ecomp private network)
 GLOBAL_MR_SERVER_PROTOCOL = "http"
 GLOBAL_MR_SERVER_PORT = "3904"
