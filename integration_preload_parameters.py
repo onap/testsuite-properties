@@ -91,8 +91,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'scaling_vdns_name_0':'vovlbscaling${hostid}',
     	    "vlb_private_net_cidr" : "192.168.10.0/24"
         },
-        "vims_preload.template" : {
-        },
         "vvg_preload.template" : {
         }
     },
@@ -135,8 +133,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             'scaling_vdns_name_0':'clvlbscaling${hostid}',
     	    "vlb_private_net_cidr" : "192.168.10.0/24"
         },
-        "vims_preload.template" : {
-        },
         "vvg_preload.template" : {
         }
     },
@@ -178,8 +174,6 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vdns_private_ip_1" : "10.1.${ecompnet}.16",
             'scaling_vdns_name_0':'demovlbscaling',
     	    "vlb_private_net_cidr" : "192.168.10.0/24"
-        },
-        "vims_preload.template" : {
         },
         "vvg_preload.template" : {
         }
