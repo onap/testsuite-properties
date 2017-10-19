@@ -13,7 +13,7 @@ function usage
 	echo "       demo.sh init_customer"
 	echo "               - Create demo customer (Demonstration) and services, etc."
 	echo " "
-	echo "       demo.sh distribute"
+	echo "       demo.sh distribute  [<prefix>]"
 	echo "               - Distribute demo models (demoVFW and demoVLB)"
 	echo " "
 	echo "       demo.sh preload <vnf_name> <module_name>"
@@ -66,6 +66,10 @@ do
 			;;
     	distribute)
 			TAG="InitDistribution"
+			shift
+			if [ $# -eq 1 ];then
+				VARIABLES="$VARIABLES -v DEMO_PREFIX:$1"
+			fi
 			shift
 			;;
     	preload)
