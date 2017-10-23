@@ -19,6 +19,9 @@ GLOBAL_ASDC_FE_PORT = "8181"
 GLOBAL_ASDC_BE_PORT = "8080"
 GLOBAL_ASDC_BE_USERNAME = "beep"
 GLOBAL_ASDC_BE_PASSWORD = "boop"
+# clamp info - everything is from the private oam network (also called ecomp private network)
+GLOBAL_CLAMP_SERVER_PROTOCOL = "http"
+GLOBAL_CLAMP_SERVER_PORT = "8080"
 # dcae info - everything is from the private oam network (also called ecomp private network)
 GLOBAL_DCAE_SERVER_PROTOCOL = "http"
 GLOBAL_DCAE_SERVER_PORT = "9998"
