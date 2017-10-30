@@ -22,7 +22,7 @@ function usage
 	echo "       demo.sh appc <module_name>"
     echo "               - provide APPC with vFW module mount point for closed loop"
 	echo " "
-	echo "       demo.sh init_robot"
+	echo "       demo.sh init_robot [ <etc_hosts_prefix> ]"
     echo "               - Initialize robot after all ONAP VMs have started"
 	echo " "
 	echo "       demo.sh instantiateVFW"
@@ -57,6 +57,10 @@ do
 				exit
 			fi
 			VARIABLES="$VARIABLES -v WEB_PASSWORD:$WEB_PASSWORD"
+			shift
+			if [ $# -eq 1 ];then
+				VARIABLES="$VARIABLES -v HOSTS_PREFIX:$1"
+			fi
 			shift
 			;;
     	init)
