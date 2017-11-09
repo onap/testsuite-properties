@@ -7,7 +7,7 @@ CONFIG=/opt/config
 PROPERTIES=/opt/eteshare/config/vm_properties.py
 GLOBAL_VM_PROPERTIES="# File generated from /opt/config\n#\n"
 HASH="GLOBAL_INJECTED_PROPERTIES={"
-COMMA+""
+COMMA=""
 for f in `ls $CONFIG/*.txt`;
 do
     VALUE=`cat $f`
