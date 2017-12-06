@@ -16,7 +16,7 @@ function usage
 	echo "       demo.sh distribute  [<prefix>]"
 	echo "               - Distribute demo models (demoVFW and demoVLB)"
 	echo " "
-	echo "       demo.sh preload <vnf_name> <module_name>"
+	echo "       demo.sh preload <vnf_name> <module_name> [ vFWSNK | vPKG | default ]"
 	echo "               - Preload data for VNF for the <module_name>"
 	echo " "
 	echo "       demo.sh appc <module_name>"
@@ -82,13 +82,15 @@ do
     	preload)
 			TAG="PreloadDemo"
 			shift
-			if [ $# -ne 2 ];then
-				echo "Usage: demo.sh preload <vnf_name> <module_name>"
+			if [ $# -ne 3 ];then
+				echo "Usage: demo.sh preload <vnf_name> <module_name>  [ vFWSNK | vPKG | default ]"
 				exit
 			fi
 			VARIABLES="$VARIABLES -v VNF_NAME:$1"
 			shift
 			VARIABLES="$VARIABLES -v MODULE_NAME:$1"
+			shift
+			VARIABLES="$VARIABLES -v VNF_SERVICE:$1"
 			shift
 			;;
     	appc)
