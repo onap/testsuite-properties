@@ -9,7 +9,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
         "onap_private_net_id" : "${GLOBAL_INJECTED_NETWORK}",
         "onap_private_subnet_id" : "${GLOBAL_INJECTED_NETWORK}",
         "onap_private_net_cidr" : "10.0.0.0/8",
-        "dcae_collector_ip" : "10.0.4.102",
+        "dcae_collector_ip" : "${dcae_collector_ip}",
         "dcae_collector_port" : "8080",
         "public_net_id" : "${GLOBAL_INJECTED_PUBLIC_NET_ID}",
         "cloud_env" : "${GLOBAL_INJECTED_CLOUD_ENV}",
