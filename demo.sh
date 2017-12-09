@@ -33,6 +33,13 @@ function usage
 	echo " "
 	echo "       demo.sh heatbridge <stack_name> <service_instance_id> <service>"
     echo "               - Run heatbridge against the stack for the given service instance and service"
+	echo " "
+	echo "       Usage: demo.sh vfwpolicyByName <generic_vnf_name>"
+    echo "               - Updates the VFW policy for the given VNF name (invariantUUID)"
+	echo " "
+	echo "       Usage: demo.sh vfwpolicyById <resource id>"
+    echo "               - Updates the VFW policy for the given resource id (invariantUUID)"
+	echo " "
 }
 
 # Set the defaults
@@ -136,6 +143,26 @@ do
 			VARIABLES="$VARIABLES -v HB_SERVICE_INSTANCE_ID:$1"
 			shift
 			VARIABLES="$VARIABLES -v HB_SERVICE:$1"
+			shift
+			;;
+    	vfwpolicyByName)
+			TAG="vfwpolicyByName"
+			shift
+			if [ $# -ne 1 ];then
+				echo "Usage: demo.sh vfwpolicyByName <generic_vnf_name>"
+				exit
+			fi
+			VARIABLES="$VARIABLES -v GENERIC_VNF_NAME:$1"
+			shift
+			;;
+    	vfwpolicyById)
+			TAG="vfwPolicyById"
+			shift
+			if [ $# -ne 1 ];then
+				echo "Usage: demo.sh vfwpolicyById <resource_id>"
+				exit
+			fi
+			VARIABLES="$VARIABLES -v RESOURCE_ID:$1"
 			shift
 			;;
     	*)

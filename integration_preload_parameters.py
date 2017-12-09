@@ -2,7 +2,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
 # heat template parameter values common to all heat template continaing these parameters
      "defaults" : {
         'key_name' : 'vfw_key${uuid}',
-        "pub_key" : "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAqqnA9BAiMLtjOPSYBfhzLu4CiBolWoskDg4KVwhTJVTTeB6CqrQNcadlGXxOHhCYuNCKkUmIVF4WTOisVOJ75Z1c4OMoZLL85xVPKSIeH63kgVugwgPYQu55NbbWX+rsbUha3LnElDhNviMM3iTPbD5nnhKixNERAJMTLKXvZZZGqxW94bREknYPQTT2qrk3YRqwldncopp6Nkgv3AnSJz2gc9tjxnWF0poTQnQm/3D6hiJICrzKfAV0EaPN0KdtYjPhKrYoy6Qb/tKOVaaqsvwfKBJGrT9LfcA7D7M/yj292RT1XN63hI84WC383LsaPJ6eWdDTE6zUP1eGTWCoOw== rsa-key-20161026",
+        "pub_key" : "${pub_key}",
         "repo_url_blob" : "https://nexus.onap.org/content/repositories/raw",
         "repo_url_artifacts" : "https://nexus.onap.org/content/groups/staging",
         "demo_artifacts_version" : "${GLOBAL_INJECTED_ARTIFACTS_VERSION}",
