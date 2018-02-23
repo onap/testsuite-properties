@@ -73,9 +73,6 @@ GLOBAL_VID_HEALTH_PASSWORD = "AppPassword!1"
 #global selenium info
 GLOBAL_PROXY_WARNING_TITLE=""
 GLOBAL_PROXY_WARNING_CONTINUE_XPATH=""
-# settings for vm to attach vvg too
-GLOBAL_VVGSERVER_IMAGE = "Ubuntu 14.04 LTS (Trusty Tahr) (PVHVM)"
-GLOBAL_VVGSERVER_FLAVOR = "4 GB General Purpose v1"
 # dns info
 GLOBAL_DNS_TRAFFIC_DURATION = "600"
 GLOBAL_HEAT_TEMPLATES_FOLDER = "/share/heat"
