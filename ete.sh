@@ -15,7 +15,7 @@ mkdir -p /opt/eteshare/logs
 export TAGS="-i $1"
 export ETEHOME=/var/opt/OpenECOMP_ETE
 export GLOBAL_BUILD_NUMBER=$(ls -1q /opt/eteshare/logs/ | wc -l)
-export OUTPUT_FOLDER=ETE_$GLOBAL_BUILD_NUMBER
+export OUTPUT_FOLDER=ETE_$(printf %04d $GLOBAL_BUILD_NUMBER)_$1
 
 VARIABLEFILES="-V /share/config/vm_properties.py -V /share/config/integration_robot_properties.py -V /share/config/integration_preload_parameters.py"
 VARIABLES="-v GLOBAL_BUILD_NUMBER:$GLOBAL_BUILD_NUMBER"
