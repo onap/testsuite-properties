@@ -4,7 +4,7 @@ GLOBAL_PRELOAD_PARAMETERS = {
          'key_name' : 'vfw_key${uuid}',
          "pub_key" : "${pub_key}",
          "repo_url_blob" : "https://nexus.onap.org/content/repositories/raw",
-         "repo_url_artifacts" : "https://nexus.onap.org/content/repositories/autorelease-43752",
+         "repo_url_artifacts" : "https://nexus.onap.org/content/repositories/releases",
          "demo_artifacts_version" : "${GLOBAL_INJECTED_ARTIFACTS_VERSION}",
          "onap_private_net_id" : "${GLOBAL_INJECTED_NETWORK}",
          "onap_private_subnet_id" : "${GLOBAL_INJECTED_NETWORK}",
