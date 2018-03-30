@@ -202,13 +202,17 @@ GLOBAL_PRELOAD_PARAMETERS = {
             "vf_module_id" : "vLoadBalancer"
         },
         "dnsscaling_preload.template" : {
+            "vlb_image_name" : "${GLOBAL_INJECTED_UBUNTU_1604_IMAGE}",
+            "vlb_flavor_name" : "${GLOBAL_INJECTED_VM_FLAVOR}",
             "vlb_private_net_id" : "cllb01_private${hostid}",
-            "vlb_private_ip_0" : "192.168.130.100",
+            "vlb_private_net_cidr" : "192.168.30.0/24",
+            "vlb_private_ip_0" : "192.168.30.100",
             "vlb_private_ip_1" : "10.0.${ecompnet}.14",
-            "vdns_private_ip_0" : "192.168.130.222",
-            "vdns_private_ip_1" : "10.0.${ecompnet}.16",
-            'scaling_vdns_name_0':'clvlbscaling${hostid}',
-            "vlb_private_net_cidr" : "192.168.10.0/24"
+            "vdns_private_ip_0" : "192.168.30.110",
+            "vdns_private_ip_1" : "10.0.${ecompnet}.15",
+            'vdns_name_0':'clvlbdns${hostid}',
+            "vnf_id" : "vLoadBalancer_${hostid}",
+            "vf_module_id" : "vLoadBalancer"
         },
         "vims_preload.template" : {
             "bono_image_name" : "${GLOBAL_INJECTED_UBUNTU_1404_IMAGE}",
