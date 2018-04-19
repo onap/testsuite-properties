@@ -21,6 +21,9 @@ GLOBAL_ASDC_BE_PASSWORD = "password"
 # clamp info - everything is from the private oam network (also called onap private network)
 GLOBAL_CLAMP_SERVER_PROTOCOL = "http"
 GLOBAL_CLAMP_SERVER_PORT = "8080"
+# cli info - everything is from the private oam network (also called onap private network)
+GLOBAL_CLI_SERVER_PROTOCOL = "http"
+GLOBAL_CLI_SERVER_PORT = "8080"
 # nbi info - everything is from the private oam network (also called onap private network)
 GLOBAL_NBI_SERVER_PROTOCOL = "http"
 GLOBAL_NBI_SERVER_PORT = "8080"
