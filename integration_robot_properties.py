@@ -35,7 +35,12 @@ GLOBAL_DCAE_SERVER_PROTOCOL = "http"
 GLOBAL_DCAE_HEALTH_SERVER_PORT = "8000"
 GLOBAL_DCAE_USERNAME = "console"
 GLOBAL_DCAE_PASSWORD = "ZjJkYjllMjljMTI2M2Iz"
-# microservice bus info - everything is from the private oam network (also called onap private network)
+# log server config - No log server is run in HEAT
+GLOBAL_LOG_SERVER_PROTOCOL = "http"
+GLOBAL_LOG_ELASTICSEARCH_PORT = "9200"
+GLOBAL_LOG_LOGSTASH_PORT = "9600"
+GLOBAL_LOG_KIBANA_PORT = "5601"
+# microservice bus info - everything is from the private oam network (also called ecomp private network)
 GLOBAL_MSB_SERVER_PROTOCOL = "http"
 GLOBAL_MSB_SERVER_PORT = "80"
 # message router info - everything is from the private oam network (also called onap private network)
