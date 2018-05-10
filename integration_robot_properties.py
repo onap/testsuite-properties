@@ -2,7 +2,6 @@
 GLOBAL_AAF_SERVER = "https://aaf.api.simpledemo.onap.org:8100"
 GLOBAL_AAF_USERNAME = "demo@people.osaaf.org"
 GLOBAL_AAF_PASSWORD = "demo123456!"
-
 # aai info - everything is from the private oam network (also called onap private network)
 GLOBAL_AAI_SERVER_PROTOCOL = "https"
 GLOBAL_AAI_SERVER_PORT = "8443"
@@ -79,6 +78,10 @@ GLOBAL_PORTAL_SERVER_PROTOCOL = "http"
 GLOBAL_PORTAL_SERVER_PORT = "8989"
 GLOBAL_PORTAL_USERNAME = "demo"
 GLOBAL_PORTAL_PASSWORD = "Kp8bJ4SXszM0WXlhak3eHlcse"
+# secret management service info
+GLOBAL_SMS_SERVER_PROTOCOL = "https"
+GLOBAL_SMS_SERVER_NAME = "aaf-sms.api.simpledemo.onap.org"
+GLOBAL_SMS_SERVER_PORT = "10443"
 # sdngc info - everything is from the private oam network (also called onap private network)
 GLOBAL_SDNGC_SERVER_PROTOCOL = "http"
 GLOBAL_SDNGC_REST_PORT = "8282"

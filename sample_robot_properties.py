@@ -71,6 +71,10 @@ GLOBAL_PORTAL_SERVER_PROTOCOL = "http"
 GLOBAL_PORTAL_SERVER_PORT = "8989"
 GLOBAL_PORTAL_USERNAME = "username"
 GLOBAL_PORTAL_PASSWORD = "password"
+# secret management service info
+GLOBAL_SMS_SERVER_PROTOCOL = "https"
+GLOBAL_SMS_SERVER_NAME = "aaf-sms.api.simpledemo.onap.org"
+GLOBAL_SMS_SERVER_PORT = "10443"
 # sdngc info - everything is from the private oam network (also called onap private network)
 GLOBAL_SDNGC_SERVER_PROTOCOL = "http"
 GLOBAL_SDNGC_REST_PORT = "8282"
